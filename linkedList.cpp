@@ -9,6 +9,19 @@ using namespace std;
 
 int main(void)
 {
+    LinkedList<int> *entrada = new LinkedList <int>();
+    int auxI;
+    while(cin >> auxI)
+        entrada -> push_back(auxI);
+    entrada -> imprimir();
+    entrada -> reverse();
+    entrada -> imprimir();
+
+
+
+
+
+    /*
     LinkedList<int> *lista[10];
     for(int i = 0 ; i < 10 ; i++)
     {
@@ -18,11 +31,11 @@ int main(void)
         aux.first = "("+ to_string(i) +" + 1) =";
         aux.second = i + 1;
         lista[i] -> push_back(empare("("+ to_string(i) +" + 1) =", (i + 1)));
-        */
+        //
     }
     for(int i = 0 ; i < 10 ; i++)
         cout << lista[i] -> cabezaW() << "\n";
-
+    */
 
 
     /*
