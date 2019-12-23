@@ -179,6 +179,20 @@ treeNode<T> *crearDeVectorOrdenado(vector <T> &entrada, int low, int high)
 }
 
 template <class T>
+treeNode <T> *findLeastCommonAncestor(treeNode <T>* root, T valueOne, T valueTwo) {
+  if (!root) {
+    return NULL;
+  }
+  if (root -> valor < valueOne && root -> valor < valueTwo) {
+    return findLeastCommonAncestor(root -> right, valueOne, valueTwo);
+  }
+  if (root -> valor > valueOne && root -> valor > valueTwo) {
+    return findLeastCommonAncestor(root -> left, valueOne, valueTwo);
+  }
+  return root;
+}
+
+template <class T>
 bool helperUni(treeNode <T> *raiz, T value)
 {
     if(!raiz)

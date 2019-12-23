@@ -9,6 +9,7 @@ using namespace std;
 int main(void)
 {
     treeNode <int> *root = new treeNode <int>(2);
+    /*
     root -> left = new treeNode <int>(3);
     root -> left -> left = new treeNode <int>(3);
     root -> left -> right = new treeNode <int>(3);
@@ -27,12 +28,21 @@ int main(void)
     root -> right -> right -> right =  new treeNode <int>(6);
     root -> right -> right -> right -> left =  new treeNode <int>(6);
     root -> right -> right -> right -> right =  new treeNode <int>(10);
+    */
     /*
     root -> left = new treeNode <int>(3);
     root -> right = new treeNode <int> (4);
     root -> left -> left = new treeNode <int> (7);
     root -> left -> right = new treeNode <int> (9);
     */
+
+    root -> left = new treeNode <int>(1);
+    root -> right = new treeNode <int>(7);
+    root -> right -> left = new treeNode <int>(4);
+    root -> right -> right = new treeNode <int>(10);
+    root -> right -> left -> left = new treeNode <int>(3);
+    root -> right -> left -> right = new treeNode <int>(6);
+
     /*
     root -> left = new treeNode <int>(3);
     root -> right = new treeNode <int>(8);
@@ -43,18 +53,19 @@ int main(void)
     root -> right -> left = new treeNode <int>(10);
     root -> right -> right = new treeNode <int>(12);
     */
+    /*
     inorder(root);
     cout << "\n";
     pair <treeNode <int>*, int> deepest = deepestLevelNode(root);
     cout << deepest.first -> valor << " " << deepest.second << "\n";
+    */
 
     //works
     //cout << numberNodes(root) << "\n";
     /*
     //works
     cout << howManyUni(root -> right -> right) << "\n";
-    /*
-    /*
+
     // - using vector 2*i
     vector <int> treeArray;
     treeArray = treeToSimpleArray(root);
@@ -92,4 +103,8 @@ int main(void)
     inorder(newTree);
     cout << "\n";
     */
+
+    treeNode <int> *nuevo = findLeastCommonAncestor(root, 4, 9);
+    cout << nuevo -> valor << endl;
+
 }
